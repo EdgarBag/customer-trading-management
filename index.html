@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="jquery-3.4.1.js"></script>
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <!-- Token -->
+    <p id='environmentP'></p>
+    <div style="width: 700px;font-size:large; border: 1px solid rgb(110, 75, 167); padding:10px; border-radius: 25px"
+        id="balanceAdjustmentDiv">
+        <h1>1.</h1>
+        <button id="tokenButton" style="color:black" type="button" class="btn btn-primary">Get Token</button>
+        <label>Get Access Token</label>
+        <input id='accessToken' type="text" disabled placeholder="Token" style="width: 120px;"> <br><br>
+    </div><br>
+    <!-- Suspend Customer Div -->
+    <div style="width: 700px;font-size:large; border: 1px solid rgb(110, 75, 167);  padding:10px; border-radius: 25px"
+        id="suspendCustomerDiv">
+        <h1>2.</h1>
+        <p>Suspend Customer</p>
+        <label>Customer ID:</label>
+        <input type="number" placeholder="Customer ID" id="customerIdForsuspend"><br>
+        <label>Action: </label>
+        <select id="suspendSelect">
+            <option disabled selected value="">Select Action</option>
+            <option id='suspend' value="1">Suspend</option>
+            <option id='unsuspend' value="0">Unsuspend</option>
+        </select><br>
+        <button id="suspendCustomer" style="color:black" type="button" class="btn btn-primary">Submit</button>
+        <p id="suspendCustomerResponse"></p>
+    </div><br>
+    <!-- Balance Correction Div -->
+    <div style="width: 700px;font-size:large; border: 1px solid rgb(110, 75, 167); padding:10px; border-radius: 25px"
+        id="balanceAdjustmentDiv">
+        <h1>3.</h1>
+        <p>Balance Adjustment</p>
+        <p>Insert Balance Adjustment Details:</p>
+        <label>Customer Id:</label>
+        <input id='customerIdAdjustment' type="number" placeholder="Customer ID"
+            style="width: 120px;background-color: tan; "> <br><br>
+        <label>Amount: </label>
+        <input type="number" id="amountAdjustment" style="background-color: tan;"><br><br>
+        <label>Comment: </label>
+        <input type="text" id="commentInput" style="background-color: tan;"><br><br>
+        <button id="balAdjustmentButton" style="color:black" type="button" class="btn btn-primary">Submit</button>
+        <p id="balAdjustmentResponse"></p>
+    </div><br>
+    <!-- Enalbe & Disable Div -->
+    <div style="width: 700px;font-size:large; border: 1px solid rgb(110, 75, 167); padding:10px; border-radius: 25px"
+        id="enableDisableInstruments">
+        <h1>4.</h1>
+        <p>Enable & Disable Instruments</p>
+        <p>Details:</p>
+        <label>Action: </label>
+        <select id="instrumentActionSelect"><br>
+            <option disabled selected value="">Select Action</option>
+            <option id='enable' value="enableInstruments">Enable</option>
+            <option id='disable' value="disableInstruments">Disable</option>
+        </select><br><br>
+        <label>Instruments Id:</label>
+        <input id='instrumentIds' type="text" placeholder=" Example: 66,40,"
+            style="width: 120px;background-color: tan; "> <br><br>
+        <button id="enableDisableInstrumentButton" style="color:black" type="button"
+            class="btn btn-primary">Submit</button>
+        <p id="instrumentStatusResponse"></p>
+    </div><br>
+    <!-- Get Balance From Redis -->
+    <div style="width: 700px;font-size:large; border: 1px solid rgb(110, 75, 167); padding:10px; border-radius: 25px"
+        id="balanceAdjustmentDiv">
+        <h1>5.</h1>
+        <p>Get Balance From Redis</p>
+        <label>Insert Customer ID:</label>
+        <input id='customerIdGetBalance' type="number" placeholder="Customer ID" style="width: 120px;"> <br><br>
+        <p id="currentBalanceP"></p>
+        <button id="getBalance" style="color:black" type="button" class="btn btn-primary">Get BALANCE</button>
+        <button id="getBotsBalance" style="color:black" type="button" class="btn btn-primary">Get BALANCES of All
+            bots</button>
+    </div><br>
+    <!-- Bots Balance Table -->
+    <div id="newTable"></div>
+
+</body>
+
+</html>
